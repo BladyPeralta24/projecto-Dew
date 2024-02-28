@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanilla House</title>
     <link rel="stylesheet" href="./styles.css">
+    <!--Enlace para usar jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!--Hacer el header con los siguientes datos:-->
@@ -32,61 +34,7 @@
     </header>
     <div class="container">
         <div class="carrusel" id="carrusel">
-            <div class="producto">
-                <img class="disc-vinilo" id="prod1" src="../img/vinilos/thriller.png" alt="producto1">
-                <div class="descripcion">
-                    <h3>Thriller</h3>
-                    <p>Michael Jackson</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="disc-vinilo" id="prod2" src="../img/vinilos/GeorgeBenson.png" alt="producto2">
-                <div class="descripcion">
-                    <h3>Give me the night</h3>
-                    <p>George Benson</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="disc-vinilo" id="prod3" src="../img/vinilos/heaven-beach.png" alt="producto3">
-                <div class="descripcion">
-                    <h3>Heaven Beach</h3>
-                    <p>Anri</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="disc-vinilo" id="prod4" src="../img/vinilos/the-chronic.png" alt="producto4">
-                <div class="descripcion">
-                    <h3>The Chronic</h3>
-                    <p>Dr. Dre</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="disc-vinilo" id="prod5" src="../img/vinilos/the-predator.png" alt="producto5">
-                <div class="descripcion">
-                    <h3>The Predator</h3>
-                    <p>Ice Cube</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="disc-vinilo" id="prod6" src="../img/vinilos/illmatic.png" alt="producto6">
-                <div class="descripcion">
-                    <h3>Illmatic</h3>
-                    <p>NAS</p>
-                    <p>$100.00</p>
-                    <button>Comprar</button>
-                </div>
-            </div>
-            <!--Segunda parte de productos para el carrusel-->
+            <div id="slide" class="carousel-products"></div>
         </div>
         <hr />
         <div class="info">
@@ -113,5 +61,64 @@
         </div>
     </div>
     <script src="./script.js"></script>
+    <script>
+        // initialize
+        $(document).ready(function() {
+            $("#slide").slizz({
+            width: '500',
+            height: '500',
+            space: '50',
+            max: '1100',
+            title: true,
+            bullets: false,
+            lang: 'es',
+            products: [
+                {
+                    title: 'Thriller',
+                    artist: 'Michael Jackson',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto1.png',
+                    sku: 'producto1'
+                },
+                {
+                    title: 'Give me the night',
+                    artist: 'George Benson',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto2.png',
+                    sku: 'producto2'
+                },
+                {
+                    title: 'Heaven Beach',
+                    artist: 'Anri',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto3.png',
+                    sku: 'producto3'
+                },
+                {
+                    title: 'The Chronic',
+                    artist: 'Dr. Dre',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto4.png',
+                    sku: 'producto4'
+                },
+                {
+                    title: 'The Predator',
+                    artist: 'Ice Cube',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto5.png',
+                    sku: 'producto5'
+                },
+                {
+                    title: 'Illmatic',
+                    artist: 'NAS',
+                    price: '$100.00',
+                    img: '../img/vinilos/producto6.png',
+                    sku: 'producto6'
+                }
+            ]
+
+            });
+        });
+    </script>
 </body>
 </html>
